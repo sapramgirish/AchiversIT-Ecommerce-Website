@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register - Ecommerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        .headerbutton {
+            margin: 0 6px;
+        }
+        header, main {
+            padding: 0 6%;
+        }
+        .anchor-header {
+            margin: 0 10px;
+        }
+        .image-size {
+            height: 210px;
+            width: 285px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <h2>Ecommerce</h2>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 17%;">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item anchor-header">
+                            <a class="nav-link" href="./home.html">Home</a>
+                        </li>
+                        <li class="nav-item anchor-header">
+                            <a class="nav-link" href="./products.html">Products</a>
+                        </li>
+                        <li class="nav-item anchor-header">
+                            <a class="nav-link" href="./Aboutus.html">About</a>
+                        </li>
+                        <li class="nav-item anchor-header">
+                            <a class="nav-link" href="./contactus.html">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <a class="nav-link headerbutton border border-dark rounded px-4 py-2" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+                        <a class="nav-link headerbutton border border-dark text-bg-dark rounded px-4 py-2" href="./register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+                        <a class="nav-link headerbutton border border-dark rounded px-4 py-2" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 class="text-center" style="padding-top: 2rem;">Register</h2>
+            <hr>
+            <section style="padding: 2% 37%;">
+                <form id="registerForm" onsubmit="return validateForm()">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter Your Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <p>Already have an account? <span class="text-decoration-underline text-info-emphasis"><a href="./login.html">Login</a></span></p>
+                    <button class="btn btn-secondary" type="submit" style="margin: 0 38%; padding: 5px 27px;">Register</button>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p class="text-center p-4">Made with <i class="fa-solid fa-heart text-danger"></i> by <span class="text-decoration-underline h5">AchiversIT</span></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function validateForm() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (fullName.trim() === '') {
+                alert('Please enter your full name.');
+                return false;
+            }
+
+            if (email.trim() === '') {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (password.trim() === '') {
+                alert('Please enter your password.');
+                return false;
+            }
+
+            console.log(`FullName:${fullName}  Email:${email}  Password:${password}`);
+            alert("Registration Successful!");
+
+            return true; 
+        }
+    </script>
+  </body>
+</html>
